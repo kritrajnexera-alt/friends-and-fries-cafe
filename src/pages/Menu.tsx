@@ -64,6 +64,7 @@ const categories: Category[] = [
 
 export default function Menu() {
   const [active, setActive] = useState(categories[0].id)
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null)
   const current = categories.find((c) => c.id === active)!
 
   return (
@@ -121,74 +122,131 @@ export default function Menu() {
           >
             {current.items.map((item) => (
               <ScrollReveal key={item.name}>
-                <div
-                  className="p-5 transition-all duration-200 cursor-default"
-                  style={{
-                    backgroundColor: '#1A1A1A',
-                    borderRadius: 6,
-                  }}
-                  onMouseEnter={(e) => {
-                    const el = e.currentTarget
-                    el.style.backgroundColor = '#222222'
-                    el.style.borderLeft = '3px solid #D4380D'
-                    el.style.paddingLeft = 'calc(1.25rem - 3px)'
-                  }}
-                  onMouseLeave={(e) => {
-                    const el = e.currentTarget
-                    el.style.backgroundColor = '#1A1A1A'
-                    el.style.borderLeft = '3px solid transparent'
-                    el.style.paddingLeft = '1.25rem'
-                  }}
-                >
-                  <div className="flex justify-between items-start mb-1">
-                    <h3
-                      className="font-heading font-semibold text-[1rem]"
-                      style={{
-                        fontFamily: 'Space Grotesk, sans-serif',
-                        fontWeight: 600,
-                        color: '#F5F5F5',
-                      }}
-                    >
-                      {item.name}
-                    </h3>
-                    <span
-                      className="font-heading font-bold text-[1rem] whitespace-nowrap ml-4"
-                      style={{
-                        fontFamily: 'Space Grotesk, sans-serif',
-                        fontWeight: 700,
-                        color: '#FAAD14',
-                      }}
-                    >
-                      {item.price}
-                    </span>
-                  </div>
-                  <p
-                    className="font-body truncate"
+                <div className="relative">
+                  <div
+                    className="p-5 transition-all duration-200 cursor-default"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
-                      fontSize: '0.85rem',
-                      color: '#888888',
+                      backgroundColor: hoveredItem === item.name ? '#222222' : '#1A1A1A',
+                      borderLeft: hoveredItem === item.name ? '3px solid #D4380D' : '3px solid transparent',
+                      paddingLeft: hoveredItem === item.name ? 'calc(1.25rem - 3px)' : '1.25rem',
+                      borderRadius: 6,
                     }}
+                    onMouseEnter={() => setHoveredItem(item.name)}
+                    onMouseLeave={() => setHoveredItem(null)}
                   >
-                    {item.desc}
-                  </p>
-                  {item.chefPick && (
-                    <span
-                      className="inline-block mt-2 font-body font-medium uppercase tracking-wide"
+                    <div className="flex justify-between items-start mb-1">
+                      <h3
+                        className="font-heading font-semibold text-[1rem]"
+                        style={{
+                          fontFamily: 'Space Grotesk, sans-serif',
+                          fontWeight: 600,
+                          color: '#F5F5F5',
+                        }}
+                      >
+                        {item.name}
+                      </h3>
+                      <span
+                        className="font-heading font-bold text-[1rem] whitespace-nowrap ml-4"
+                        style={{
+                          fontFamily: 'Space Grotesk, sans-serif',
+                          fontWeight: 700,
+                          color: '#FAAD14',
+                        }}
+                      >
+                        {item.price}
+                      </span>
+                    </div>
+                    <p
+                      className="font-body truncate"
                       style={{
                         fontFamily: 'Inter, sans-serif',
-                        fontWeight: 500,
-                        fontSize: '0.65rem',
-                        letterSpacing: '0.05em',
-                        backgroundColor: '#D4380D',
-                        color: '#F5F5F5',
-                        padding: '2px 8px',
-                        borderRadius: 2,
+                        fontSize: '0.85rem',
+                        color: '#888888',
                       }}
                     >
-                      Chef's Pick
-                    </span>
-                  )}
+                      {item.desc}
+                    </p>
+                    {item.chefPick && (
+                      <span
+                        className="inline-block mt-2 font-body font-medium uppercase tracking-wide"
+                        style={{
+                          fontFamily: 'Inter, sans-serif',
+                          fontWeight: 500,
+                          fontSize: '0.65rem',
+                          letterSpacing: '0.05em',
+                          backgroundColor: '#D4380D',
+                          color: '#F5F5F5',
+                          padding: '2px 8px',
+                          borderRadius: 2,
+                        }}
+                      >
+                        Chef's Pick
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Hover Popup */}
+                  <AnimatePresence>
+                    {hoveredItem === item.name && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        transition={{ duration: hoveredItem === item.name ? 0.3 : 0.2, ease: 'easeOut' }}
+                        className="absolute bottom-full left-0 right-0 mb-2 pointer-events-none"
+                        style={{ zIndex: 50 }}
+                      >
+                        <div
+                          style={{
+                            backgroundColor: 'rgba(20,20,20,0.95)',
+                            border: '1px solid rgba(255,255,255,0.1)',
+                            borderRadius: 10,
+                            padding: '12px 16px',
+                            boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
+                          }}
+                        >
+                          <div
+                            className="font-heading font-semibold mb-1"
+                            style={{
+                              fontFamily: 'Space Grotesk, sans-serif',
+                              fontWeight: 600,
+                              fontSize: '0.95rem',
+                              color: '#F5F5F5',
+                            }}
+                          >
+                            {item.name}
+                          </div>
+                          <div
+                            className="font-body"
+                            style={{
+                              fontFamily: 'Inter, sans-serif',
+                              fontSize: 13,
+                              color: '#999999',
+                            }}
+                          >
+                            {item.desc}
+                          </div>
+                          {item.chefPick && (
+                            <span
+                              className="inline-block mt-1.5 font-body font-medium uppercase tracking-wide"
+                              style={{
+                                fontFamily: 'Inter, sans-serif',
+                                fontWeight: 500,
+                                fontSize: '0.6rem',
+                                letterSpacing: '0.05em',
+                                backgroundColor: '#D4380D',
+                                color: '#F5F5F5',
+                                padding: '2px 10px',
+                                borderRadius: 9999,
+                              }}
+                            >
+                              Chef's Pick
+                            </span>
+                          )}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               </ScrollReveal>
             ))}
