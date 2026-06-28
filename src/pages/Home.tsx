@@ -111,7 +111,7 @@ export default function Home() {
           }}
         >
           <img
-            src="/images/unnamed-6.jpg"
+            src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=1600&q=85"
             alt=""
             className="w-full h-full object-cover"
             style={{ height: '100%', minHeight: '50vh' }}
@@ -126,7 +126,7 @@ export default function Home() {
       <section className="flex flex-col md:flex-row">
         <div className="w-full md:w-[60%] min-h-[400px] md:min-h-[500px]">
           <img
-            src="/images/unnamed.jpg"
+            src="https://images.unsplash.com/photo-1630431341973-02e1b662ec35?w=800&q=85"
             alt=""
             className="w-full h-full object-cover"
             style={{ height: '100%', minHeight: 400 }}
@@ -201,7 +201,7 @@ export default function Home() {
               transition={{ duration: 0.6, ease: 'easeOut' }}
             >
               <img
-                src="/images/unnamed-2.jpg"
+                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=85"
                 alt="Signature Burger"
                 className="w-full object-cover"
                 style={{ height: 600 }}
@@ -250,32 +250,32 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
             {[
               {
-                src: '/images/unnamed-3.jpg',
+                src: 'https://images.unsplash.com/photo-1481833761820-0509d3217039?w=600&q=80',
                 h: 250,
                 caption: 'Cafe Interior',
               },
               {
-                src: '/images/unnamed-4.jpg',
+                src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80',
                 h: 350,
                 caption: 'Plating',
               },
               {
-                src: '/images/unnamed-5.jpg',
+                src: 'https://images.unsplash.com/photo-1630431341973-02e1b662ec35?w=600&q=80',
                 h: 300,
                 caption: 'Loaded Fries',
               },
               {
-                src: '/images/unnamed-6.jpg',
+                src: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80',
                 h: 250,
                 caption: 'Smash Burger',
               },
               {
-                src: '/images/unnamed-7.jpg',
+                src: 'https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=600&q=80',
                 h: 350,
                 caption: 'Milkshake',
               },
               {
-                src: '/images/unnamed-8.jpg',
+                src: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&q=80',
                 h: 300,
                 caption: 'Cozy Vibes',
               },

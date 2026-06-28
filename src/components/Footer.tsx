@@ -17,12 +17,11 @@ export default function Footer() {
     >
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
-          <div
-            className="font-heading font-black text-[1.5rem] text-brand-primary mb-3"
-            style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 900 }}
-          >
-            F&F
-          </div>
+          <img
+            src="/images/logo.jpg"
+            alt="Friends & Fries Cafe"
+            className="h-10 w-auto mb-3"
+          />
           <p
             className="font-body text-[0.9rem]"
             style={{ color: '#888888', fontFamily: 'Inter, sans-serif' }}

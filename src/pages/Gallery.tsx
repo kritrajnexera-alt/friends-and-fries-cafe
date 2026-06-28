@@ -2,15 +2,15 @@ import { motion } from 'framer-motion'
 import PageTransition from '../components/PageTransition'
 
 const images = [
-  { src: '/images/unnamed.jpg', caption: 'Cafe vibes' },
-  { src: '/images/unnamed-2.jpg', caption: 'Inside the cafe' },
-  { src: '/images/unnamed-3.jpg', caption: 'Food serving' },
-  { src: '/images/unnamed-4.jpg', caption: 'Dish close-up' },
-  { src: '/images/unnamed-5.jpg', caption: 'Meal prep' },
-  { src: '/images/unnamed-6.jpg', caption: 'Cafe corner' },
-  { src: '/images/unnamed-7.jpg', caption: 'The counter' },
-  { src: '/images/unnamed-8.jpg', caption: 'Dine-in area' },
-  { src: '/images/unnamed-9.jpg', caption: 'Cafe entrance' },
+  { src: 'https://images.unsplash.com/photo-1481833761820-0509d3217039?w=600&q=80', caption: 'Sunlit corner' },
+  { src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80', caption: 'Fresh plating' },
+  { src: 'https://images.unsplash.com/photo-1630431341973-02e1b662ec35?w=600&q=80', caption: 'Loaded fries' },
+  { src: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80', caption: 'Classic smash burger' },
+  { src: 'https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=600&q=80', caption: 'Shakes and sips' },
+  { src: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&q=80', caption: 'Cafe interior' },
+  { src: 'https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&q=80', caption: 'The grill station' },
+  { src: 'https://images.unsplash.com/photo-1481833761820-0509d3217039?w=600&q=80', caption: 'Dine-in vibes' },
+  { src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80', caption: 'Dessert shots' },
 ]
 
 export default function Gallery() {

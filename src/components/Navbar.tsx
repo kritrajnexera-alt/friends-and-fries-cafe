@@ -35,12 +35,12 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link
-          to="/"
-          className="font-heading font-black text-[1.5rem] text-brand-primary no-underline"
-          style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 900 }}
-        >
-          F&F
+        <Link to="/" className="block shrink-0">
+          <img
+            src="/images/logo.jpg"
+            alt="Friends & Fries Cafe"
+            className="h-10 w-auto"
+          />
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
