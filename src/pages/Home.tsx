@@ -113,7 +113,7 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
-          className="w-full md:w-[45%] min-h-[50vh] md:min-h-screen"
+          className="w-full md:w-[45%] min-h-[50vh] md:min-h-screen overflow-hidden"
           style={{
             clipPath: 'polygon(12% 0, 100% 0, 100% 100%, 0 100%)',
           }}
@@ -121,7 +121,7 @@ export default function Home() {
           <img
             src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=1600&q=85"
             alt=""
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover ken-burns"
             style={{ height: '100%', minHeight: '50vh' }}
           />
         </motion.div>
