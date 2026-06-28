@@ -126,7 +126,7 @@ export default function About() {
           <div className="w-full md:w-1/2">
             <ScrollReveal>
               <img
-                src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1200&q=85"
+                src="/images/unnamed-9.jpg"
                 alt="Friends & Fries Cafe interior"
                 className="w-full h-full object-cover"
                 style={{ minHeight: 400, maxHeight: 600 }}
