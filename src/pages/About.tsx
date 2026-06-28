@@ -127,8 +127,9 @@ export default function About() {
             <ScrollReveal>
               <img
                 src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1200&q=85"
-                alt="Friends & Fries Cafe interior"
+                alt="Friends & Fries Cafe interior — cozy dining space"
                 className="w-full h-full object-cover"
+                loading="lazy"
                 style={{ minHeight: 400, maxHeight: 600 }}
               />
             </ScrollReveal>

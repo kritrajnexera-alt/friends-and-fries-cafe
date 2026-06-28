@@ -50,6 +50,7 @@ export default function Gallery() {
                 src={img.src}
                 alt={img.caption}
                 className="w-full h-auto object-cover block"
+                loading="lazy"
                 style={{ display: 'block', width: '100%' }}
               />
               <div

@@ -113,14 +113,11 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
-          className="w-full md:w-[45%] min-h-[50vh] md:min-h-screen overflow-hidden"
-          style={{
-            clipPath: 'polygon(12% 0, 100% 0, 100% 100%, 0 100%)',
-          }}
+          className="w-full md:w-[45%] min-h-[50vh] md:min-h-screen overflow-hidden hero-clip"
         >
           <img
             src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=1600&q=85"
-            alt=""
+            alt="Friends & Fries Cafe — burgers and fries"
             className="w-full h-full object-cover ken-burns"
             style={{ height: '100%', minHeight: '50vh' }}
           />
@@ -135,8 +132,9 @@ export default function Home() {
         <div className="w-full md:w-[60%] min-h-[400px] md:min-h-[500px]">
           <img
             src="https://images.unsplash.com/photo-1630431341973-02e1b662ec35?w=800&q=85"
-            alt=""
+            alt="Loaded fries with seasoning"
             className="w-full h-full object-cover"
+            loading="lazy"
             style={{ height: '100%', minHeight: 400 }}
           />
         </div>
@@ -210,8 +208,9 @@ export default function Home() {
             >
               <img
                 src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=85"
-                alt="Signature Burger"
+                alt="Classic Smash Burger — double patty with cheese"
                 className="w-full object-cover"
+                loading="lazy"
                 style={{ height: 600 }}
               />
             </motion.div>
@@ -297,6 +296,7 @@ export default function Home() {
                   src={img.src}
                   alt={img.caption}
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
                 <div
                   className="absolute inset-0 flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -345,6 +345,7 @@ function Ticker() {
     <div
       className="w-full overflow-hidden py-3"
       style={{ backgroundColor: '#D4380D' }}
+      aria-hidden="true"
     >
       <div className="flex whitespace-nowrap marquee-animation">
         <span

@@ -90,6 +90,7 @@ export default function Navbar() {
                   fontFamily: 'Inter, sans-serif',
                   fontWeight: 500,
                 }}
+                {...(isActive ? { 'aria-current': 'page' as const } : {})}
                 onMouseEnter={(e) => {
                   if (!isActive) e.currentTarget.style.color = '#F5F5F5'
                 }}
@@ -149,6 +150,7 @@ export default function Navbar() {
                         fontFamily: 'Inter, sans-serif',
                         fontWeight: 500,
                       }}
+                      {...(isActive ? { 'aria-current': 'page' as const } : {})}
                       onClick={() => setMobileOpen(false)}
                     >
                       {link.label}

@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import type { ReactNode } from 'react'
 
 interface Props {
@@ -6,11 +6,13 @@ interface Props {
 }
 
 export default function PageTransition({ children }: Props) {
+  const prefersReduced = useReducedMotion()
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 20 }}
+      initial={prefersReduced ? { opacity: 0 } : { opacity: 0, y: 20 }}
+      animate={prefersReduced ? { opacity: 1 } : { opacity: 1, y: 0 }}
+      exit={prefersReduced ? { opacity: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.35, ease: 'easeOut' }}
     >
       {children}
