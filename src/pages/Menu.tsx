@@ -7,6 +7,7 @@ interface Item {
   name: string
   price: string
   desc: string
+  image: string
   chefPick?: boolean
 }
 
@@ -21,43 +22,43 @@ const categories: Category[] = [
     id: 'fries',
     label: 'Fries & Sides',
     items: [
-      { name: 'Masala Loaded Fries', price: '₹149', desc: 'Spiced with our signature masala blend', chefPick: true },
-      { name: 'Cheese Overloaded Fries', price: '₹179', desc: 'Generous cheese sauce and herbs' },
-      { name: 'Peri Peri Fries', price: '₹129', desc: 'Tangy peri peri seasoning' },
-      { name: 'Onion Rings', price: '₹99', desc: 'Crispy battered onion rings' },
-      { name: 'Garlic Bread', price: '₹89', desc: 'Toasted with garlic butter' },
+      { name: 'Masala Loaded Fries', price: '₹149', desc: 'Spiced with our signature masala blend', image: 'https://images.unsplash.com/photo-1630431341973-02e1b662ec35?w=200&q=80', chefPick: true },
+      { name: 'Cheese Overloaded Fries', price: '₹179', desc: 'Generous cheese sauce and herbs', image: 'https://images.unsplash.com/photo-1630431341973-02e1b662ec35?w=200&q=80' },
+      { name: 'Peri Peri Fries', price: '₹129', desc: 'Tangy peri peri seasoning', image: 'https://images.unsplash.com/photo-1630431341973-02e1b662ec35?w=200&q=80' },
+      { name: 'Onion Rings', price: '₹99', desc: 'Crispy battered onion rings', image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=200&q=80' },
+      { name: 'Garlic Bread', price: '₹89', desc: 'Toasted with garlic butter', image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=200&q=80' },
     ],
   },
   {
     id: 'burgers',
     label: 'Burgers & Wraps',
     items: [
-      { name: 'Classic Smash Burger', price: '₹199', desc: 'Double patty with cheddar and onions', chefPick: true },
-      { name: 'Double Patty Beast', price: '₹249', desc: 'Two smash patties, bacon and cheese' },
-      { name: 'Crispy Chicken Wrap', price: '₹179', desc: 'Crunchy chicken with ranch dressing' },
-      { name: 'Paneer Tikka Wrap', price: '₹169', desc: 'Spiced paneer with mint chutney' },
-      { name: 'BBQ Crunch Burger', price: '₹229', desc: 'BBQ sauce with crispy onion strings' },
+      { name: 'Classic Smash Burger', price: '₹199', desc: 'Double patty with cheddar and onions', image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200&q=80', chefPick: true },
+      { name: 'Double Patty Beast', price: '₹249', desc: 'Two smash patties, bacon and cheese', image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200&q=80' },
+      { name: 'Crispy Chicken Wrap', price: '₹179', desc: 'Crunchy chicken with ranch dressing', image: 'https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=200&q=80' },
+      { name: 'Paneer Tikka Wrap', price: '₹169', desc: 'Spiced paneer with mint chutney', image: 'https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=200&q=80' },
+      { name: 'BBQ Crunch Burger', price: '₹229', desc: 'BBQ sauce with crispy onion strings', image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200&q=80' },
     ],
   },
   {
     id: 'beverages',
     label: 'Cold Brews & Shakes',
     items: [
-      { name: 'Cold Coffee', price: '₹99', desc: 'Chilled brewed coffee with milk', chefPick: true },
-      { name: 'Oreo Shake', price: '₹129', desc: 'Creamy Oreo milkshake' },
-      { name: 'Mango Mastani', price: '₹119', desc: 'Mango shake loaded with dry fruits' },
-      { name: 'Chocolate Overload', price: '₹139', desc: 'Rich chocolate shake with brownie bits' },
-      { name: 'Virgin Mojito', price: '₹89', desc: 'Minty lemon cooler' },
+      { name: 'Cold Coffee', price: '₹99', desc: 'Chilled brewed coffee with milk', image: 'https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=200&q=80', chefPick: true },
+      { name: 'Oreo Shake', price: '₹129', desc: 'Creamy Oreo milkshake', image: 'https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=200&q=80' },
+      { name: 'Mango Mastani', price: '₹119', desc: 'Mango shake loaded with dry fruits', image: 'https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=200&q=80' },
+      { name: 'Chocolate Overload', price: '₹139', desc: 'Rich chocolate shake with brownie bits', image: 'https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=200&q=80' },
+      { name: 'Virgin Mojito', price: '₹89', desc: 'Minty lemon cooler', image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=200&q=80' },
     ],
   },
   {
     id: 'desserts',
     label: 'Desserts',
     items: [
-      { name: 'Brownie Blast', price: '₹129', desc: 'Warm brownie with ice cream', chefPick: true },
-      { name: 'Nutella Waffles', price: '₹159', desc: 'Crispy waffles with Nutella drizzle' },
-      { name: 'Ice Cream Sundae', price: '₹109', desc: 'Three scoops with toppings' },
-      { name: 'Choco Lava Cup', price: '₹119', desc: 'Molten chocolate lava cake' },
+      { name: 'Brownie Blast', price: '₹129', desc: 'Warm brownie with ice cream', image: 'https://images.unsplash.com/photo-1481833761820-0509d3217039?w=200&q=80', chefPick: true },
+      { name: 'Nutella Waffles', price: '₹159', desc: 'Crispy waffles with Nutella drizzle', image: 'https://images.unsplash.com/photo-1481833761820-0509d3217039?w=200&q=80' },
+      { name: 'Ice Cream Sundae', price: '₹109', desc: 'Three scoops with toppings', image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=200&q=80' },
+      { name: 'Choco Lava Cup', price: '₹119', desc: 'Molten chocolate lava cake', image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=200&q=80' },
     ],
   },
 ]
@@ -205,44 +206,54 @@ export default function Menu() {
                             boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
                           }}
                         >
-                          <div
-                            className="font-heading font-semibold mb-1"
-                            style={{
-                              fontFamily: 'Space Grotesk, sans-serif',
-                              fontWeight: 600,
-                              fontSize: '0.95rem',
-                              color: '#F5F5F5',
-                            }}
-                          >
-                            {item.name}
+                          <div className="flex gap-3">
+                            <img
+                              src={item.image}
+                              alt={item.name}
+                              className="rounded-lg shrink-0 object-cover"
+                              style={{ width: 56, height: 56, borderRadius: 8 }}
+                            />
+                            <div className="min-w-0">
+                              <div
+                                className="font-heading font-semibold mb-1"
+                                style={{
+                                  fontFamily: 'Space Grotesk, sans-serif',
+                                  fontWeight: 600,
+                                  fontSize: '0.95rem',
+                                  color: '#F5F5F5',
+                                }}
+                              >
+                                {item.name}
+                              </div>
+                              <div
+                                className="font-body"
+                                style={{
+                                  fontFamily: 'Inter, sans-serif',
+                                  fontSize: 13,
+                                  color: '#999999',
+                                }}
+                              >
+                                {item.desc}
+                              </div>
+                              {item.chefPick && (
+                                <span
+                                  className="inline-block mt-1.5 font-body font-medium uppercase tracking-wide"
+                                  style={{
+                                    fontFamily: 'Inter, sans-serif',
+                                    fontWeight: 500,
+                                    fontSize: '0.6rem',
+                                    letterSpacing: '0.05em',
+                                    backgroundColor: '#D4380D',
+                                    color: '#F5F5F5',
+                                    padding: '2px 10px',
+                                    borderRadius: 9999,
+                                  }}
+                                >
+                                  Chef's Pick
+                                </span>
+                              )}
+                            </div>
                           </div>
-                          <div
-                            className="font-body"
-                            style={{
-                              fontFamily: 'Inter, sans-serif',
-                              fontSize: 13,
-                              color: '#999999',
-                            }}
-                          >
-                            {item.desc}
-                          </div>
-                          {item.chefPick && (
-                            <span
-                              className="inline-block mt-1.5 font-body font-medium uppercase tracking-wide"
-                              style={{
-                                fontFamily: 'Inter, sans-serif',
-                                fontWeight: 500,
-                                fontSize: '0.6rem',
-                                letterSpacing: '0.05em',
-                                backgroundColor: '#D4380D',
-                                color: '#F5F5F5',
-                                padding: '2px 10px',
-                                borderRadius: 9999,
-                              }}
-                            >
-                              Chef's Pick
-                            </span>
-                          )}
                         </div>
                       </motion.div>
                     )}
