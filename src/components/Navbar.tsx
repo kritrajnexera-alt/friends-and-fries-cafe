@@ -35,18 +35,47 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="block shrink-0 leading-none">
-          <motion.img
-            src="/images/logo.jpg"
-            alt="Friends & Fries Cafe"
-            className="rounded-full"
-            style={{ width: 60, height: 60, objectFit: 'cover' }}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            whileHover={{ rotate: 10, scale: 1.1, transition: { duration: 0.3 } }}
-          />
-        </Link>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+          whileHover={{ scale: 1.03, transition: { duration: 0.3, ease: 'easeOut' } }}
+        >
+          <Link to="/" className="flex items-center gap-3 no-underline cursor-pointer">
+            <img
+              src="/images/logo.jpg"
+              alt="Friends & Fries Cafe"
+              className="rounded-full shrink-0"
+              style={{ width: 55, height: 55, objectFit: 'cover' }}
+            />
+            <div>
+              <div
+                className="leading-none"
+                style={{
+                  fontFamily: 'Space Grotesk, sans-serif',
+                  fontWeight: 800,
+                  fontSize: 18,
+                  color: '#F5F5F5',
+                  letterSpacing: '2px',
+                }}
+              >
+                FRIENDS &amp; FRIES
+              </div>
+              <div
+                className="leading-none mt-0.5"
+                style={{
+                  fontFamily: 'Space Grotesk, sans-serif',
+                  fontWeight: 700,
+                  fontSize: 13,
+                  color: '#E8450A',
+                  letterSpacing: '4px',
+                }}
+              >
+                CAF&Eacute;
+              </div>
+            </div>
+          </Link>
+        </motion.div>
 
         <div className="hidden md:flex items-center gap-8">
           {links.map((link) => {
