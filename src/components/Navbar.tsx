@@ -35,11 +35,16 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="block shrink-0">
-          <img
+        <Link to="/" className="block shrink-0 leading-none">
+          <motion.img
             src="/images/logo.jpg"
             alt="Friends & Fries Cafe"
-            className="h-10 w-auto"
+            className="rounded-full"
+            style={{ width: 60, height: 60, objectFit: 'cover' }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            whileHover={{ rotate: 10, scale: 1.1, transition: { duration: 0.3 } }}
           />
         </Link>
 
